@@ -66,6 +66,10 @@ app.use('/api/submit', submitRoute);
 app.use('/api/data', dataRoute);
 app.use('/api/download', downloadRoute);
 
+app.get('/', async (req, res) => {
+    res.status(200).json("Welcome to phone-form-backend")
+})
+
 // Server Start
 app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
 
