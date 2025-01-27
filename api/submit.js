@@ -16,8 +16,15 @@ router.post('/', async (req, res) => {
     }
 });
 
-module.exports = router;
+// module.exports = router;
 
-export default function handler(req, res) {
-    res.status(200).json({ message: "Hello from submit.js!" });
-}
+const connectToDatabase = require('../utils/db');
+
+module.exports = async (req, res) => {
+    try {
+        await connectToDatabase();
+        res.status(200).json({ message: 'Submit route is working!' });
+    } catch (error) {
+        res.status(500).json({ error: 'Error in submit route', details: error.message });
+    }
+};
