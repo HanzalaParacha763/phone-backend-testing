@@ -3,6 +3,17 @@
   "builds": [
     { "src": "index.js", "use": "@vercel/node" }
   ],
+  "routes": [
+    {
+      "src":"./api/submit", "dest":"/submit"
+    },
+    {
+      "src":"./api/data", "dest":"/data"
+    },
+    {
+      "src":"./api/download", "dest":"/download"
+    }
+  ],
   "env": {
     "MONGO_URI": "mongodb://localhost:27017/backendApp"
   }
