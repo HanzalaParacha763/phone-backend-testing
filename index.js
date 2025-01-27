@@ -47,9 +47,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const connectToDatabase = require('./utils/db');
 
-const submitRoute = require('./api/submit');
-const dataRoute = require('./api/data');
-const downloadRoute = require('./api/download');
+// const submitRoute = require('./api/submit');
+// const dataRoute = require('./api/data');
+// const downloadRoute = require('./api/download');
 
 const app = express();
 const PORT = 3001;
@@ -62,9 +62,9 @@ app.use(bodyParser.json());
 
 
 // Routes
-app.use('/api/submit', submitRoute);
-app.use('/api/data', dataRoute);
-app.use('/api/download', downloadRoute);
+// app.use('/api/submit', submitRoute);
+// app.use('/api/data', dataRoute);
+// app.use('/api/download', downloadRoute);
 
 app.get('/', async (req, res) => {
     try {
