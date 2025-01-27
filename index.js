@@ -32,7 +32,7 @@ const FormData = mongoose.model('FormData', formDataSchema);
 // Routes
 
 // POST: Submit form data
-app.post('/submit', async (req, res) => {
+app.post('/api/submit', async (req, res) => {
     const { name, email, phone } = req.body;
 
     if (!name || !email || !phone) {
@@ -50,7 +50,7 @@ app.post('/submit', async (req, res) => {
 });
 
 // GET: Fetch all form data
-app.get('/data', async (req, res) => {
+app.get('/api/data', async (req, res) => {
     try {
         const data = await FormData.find();
         res.status(200).json(data);
@@ -61,7 +61,7 @@ app.get('/data', async (req, res) => {
 });
 
 // GET: Generate and Download Excel File
-app.get('/download', async (req, res) => {
+app.get('/api/download', async (req, res) => {
     try {
         // Fetch data from the database
         const data = await FormData.find().lean();
