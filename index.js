@@ -52,7 +52,7 @@ const dataRoute = require('./api/data');
 const downloadRoute = require('./api/download');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 connectToDatabase();
 
 // Middleware
