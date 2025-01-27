@@ -67,7 +67,12 @@ app.use('/api/data', dataRoute);
 app.use('/api/download', downloadRoute);
 
 app.get('/', async (req, res) => {
-    res.status(200).json("Welcome to phone-form-backend")
+    try {
+        res.status(200).send("Welcome to phone-form-backend")
+    } catch (error) {
+        alert("Error:" + error)
+        res.status(500).send("Error with something")
+    }
 })
 
 // Server Start
